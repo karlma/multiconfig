@@ -86,6 +86,16 @@ Generated environment variables:
    SERVER_USERS
 ```
 
+## Compatible with flag
+
+[see](https://blog.phpgao.com/multiconfig_vs_glog.html)
+
+Set flag variable before multiconfig
+
+```
+    Version := flag.Bool("version", false, "Display version")
+    m := multiconfig.NewWithPath("cti.toml")
+```
 
 ## License
 

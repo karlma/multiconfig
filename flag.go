@@ -85,6 +85,10 @@ func (f *FlagLoader) Load(s interface{}) error {
 		args = f.Args
 	}
 
+	flag.VisitAll(func(ff *flag.Flag) {
+		f.flagSet.Var(ff.Value, ff.Name, ff.Usage)
+	})
+
 	return flagSet.Parse(args)
 }
 
